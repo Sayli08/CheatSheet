@@ -102,16 +102,25 @@ myStr.lastIndexOf(" "); // 6
 
 ## Extracting Substrings:
 1. Use `substring`:
-   
-The `substring` method includes the character at the start index but excludes the character at the end index.
-So, `str.substring(7, 17)` will include the characters from index 7 to 16.
+The `substring` method includes the character at the start index but excludes the character at the end index. So, `str.substring(7, 17)` will include the characters from index 7 to 16.
 
 ```java
-String str = "GitHub Repository"; // 0 to 5 is GitHub , 6 is space, 7 to 16 is Repository 
+String str = "GitHub Repository";
 String subStr = str.substring(7, 17);  // "Repository"
 ```
 
-**Time Complexity:** O(n) where n is the length of the substring
+### Explanation of Time Complexity for `substring`:
+The `substring` method in Java does not actually take O(n) time complexity; it operates in O(1) time complexity. This is because `substring` does not create a new character array; it uses the same underlying character array as the original string and simply adjusts the offset and count to represent the new string.
+
+However, there are a few nuances to keep in mind:
+
+- **Java 7 and Earlier Versions**: In these versions, `substring` used the same underlying character array as the original string, making it an O(1) operation.
+
+- **Java 7 Update 6 and Later Versions**: Starting from this version, the implementation was changed to avoid memory leaks. The `substring` method creates a new character array, making it an O(n) operation where n is the length of the substring.
+
+**Time Complexity:** 
+- O(1) for Java 7 and earlier versions
+- O(n) for Java 7 update 6 and later versions, where n is the length of the substring.
 
 ## Checking Prefix of a String:
 1. Use `startsWith`:
