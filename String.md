@@ -102,6 +102,7 @@ myStr.lastIndexOf(" "); // 6
 
 ## Extracting Substrings:
 1. Use `substring`:
+   
 The `substring` method includes the character at the start index but excludes the character at the end index.
 So, `str.substring(7, 17)` will include the characters from index 7 to 16.
 
