@@ -42,6 +42,19 @@ for(char ch : input.toCharArray()) {
 
 **Time Complexity:** O(n) where n is the length of the string
 
+
+2. Using `charAt`:
+```java
+String input = "GitHub";
+for (int i = 0; i < input.length(); i++) {
+    char ch = input.charAt(i);
+    // Do something with ch
+}
+```
+
+**Time Complexity:** O(n) where n is the length of the string
+
+
 ## Separate the String Based on Some Character:
 1. Split:
 ```java
@@ -131,3 +144,66 @@ boolean isNotPrefix = str.startsWith("Hub");  // false
 ```
 
 **Time Complexity:** O(k) where k is the length of the prefix string
+
+## Convert Integer to String:
+
+1. Using `String.valueOf`:
+```java
+int num = 123;
+String str = String.valueOf(num);  // "123"
+```
+
+**Time Complexity:** O(1)
+
+2. Using `Integer.toString`:
+```java
+int num = 123;
+String str = Integer.toString(num);  // "123"
+```
+
+**Time Complexity:** O(1)
+
+3. Using `Integer.toString` with a radix (base):
+```java
+int num = 123;
+String str = Integer.toString(num, 10);  // "123" in base 10
+String strHex = Integer.toString(num, 16);  // "7b" in base 16
+```
+
+**Time Complexity:** O(1)
+
+4. Using String concatenation:
+```java
+int num = 123;
+String str = "" + num;  // "123"
+```
+
+**Time Complexity:** O(1)
+
+## Example Usage:
+```java
+public class Main {
+    public static void main(String[] args) {
+        int num = 123;
+
+        // Using String.valueOf
+        String str1 = String.valueOf(num);
+        System.out.println(str1);  // Output: "123"
+
+        // Using Integer.toString
+        String str2 = Integer.toString(num);
+        System.out.println(str2);  // Output: "123"
+
+        // Using Integer.toString with radix
+        String str3 = Integer.toString(num, 10);
+        System.out.println(str3);  // Output: "123"
+        
+        String strHex = Integer.toString(num, 16);
+        System.out.println(strHex);  // Output: "7b"
+
+        // Using String concatenation
+        String str4 = "" + num;
+        System.out.println(str4);  // Output: "123"
+    }
+}
+###Note: All the methods above have a time complexity of O(1) because converting an integer to a string involves a constant amount of work regardless of the integer's value.
