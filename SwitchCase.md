@@ -92,6 +92,94 @@ String dayType = switch (day) {
 
 System.out.println(dayType); // Outputs: Weekday
 ```
+##
+
+# Let's expand on the explanation of using switch as an expression in Java:
+
+### Switch as an Expression
+
+In Java 12 and later, the switch statement can be used as an expression. 
+This means that the switch can directly return a value, which can then be assigned to a variable or used in other expressions. 
+This makes the switch statement more powerful and concise.
+
+#### Syntax
+```java
+result = switch (expression) {
+    case value1 -> // Expression;
+    case value2 -> // Expression;
+    // Other cases
+    default -> // Default expression;
+};
+```
+
+### Key Features
+1. **Arrow Syntax (`->`)**: Instead of using colons (`:`) and `break` statements, the arrow syntax is used to associate each case with an expression.
+2. **Returning Values**: Each case in the switch expression can return a value, and these values can be directly assigned to a variable.
+3. **No Fall-Through**: There's no need to use `break` statements to prevent fall-through; each case is isolated and returns a value independently.
+4. **Multiple Labels**: You can use multiple labels for a single case, separated by commas.
+5. **Compact and Readable**: The switch expression is more concise and easier to read compared to the traditional switch statement.
+
+### Example
+Here's an example demonstrating the use of switch as an expression:
+
+```java
+int day = 3;
+String dayType = switch (day) {
+    case 1, 2, 3, 4, 5 -> "Weekday";
+    case 6, 7 -> "Weekend";
+    default -> "Invalid day";
+};
+
+System.out.println(dayType); // Outputs: Weekday
+```
+
+### Explanation of the Example
+- **Variable Assignment**: The result of the switch expression is assigned to the variable `dayType`.
+- **Cases**: The cases 1, 2, 3, 4, and 5 all map to the expression `"Weekday"`.
+- **Multiple Labels**: The cases 6 and 7 map to the expression `"Weekend"`.
+- **Default Case**: The default case handles any values that do not match the specified cases, returning `"Invalid day"`.
+- **Output**: Based on the value of `day`, the corresponding string is returned and printed.
+
+### Benefits
+- **Conciseness**: The code is shorter and more readable compared to using a traditional switch statement with `break` statements.
+- **Safety**: Since there's no fall-through, there's less risk of bugs due to missing `break` statements.
+- **Flexibility**: It allows for more flexible and expressive code, especially when you need to return values from a switch.
+
+### More Complex Example
+Here's a more complex example that includes blocks of code for each case:
+
+```java
+int month = 4;
+int daysInMonth = switch (month) {
+    case 1, 3, 5, 7, 8, 10, 12 -> 31;
+    case 4, 6, 9, 11 -> 30;
+    case 2 -> {
+        int year = 2024;
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+            yield 29;
+        } else {
+            yield 28;
+        }
+    }
+    default -> throw new IllegalArgumentException("Invalid month: " + month);
+};
+
+System.out.println("Days in month: " + daysInMonth); // Outputs: Days in month: 30
+```
+
+### Explanation of the Complex Example
+- **Variable Assignment**: The result of the switch expression is assigned to the variable `daysInMonth`.
+- **Single Line Cases**: For months with a fixed number of days (31 or 30), the values are returned directly.
+- **Block of Code for February**: For February, a block of code checks whether the year is a leap year and uses the `yield` statement to return the appropriate number of days.
+- **Default Case**: The default case throws an exception if an invalid month is provided.
+
+This example demonstrates how switch expressions can include blocks of code, which can use the `yield` statement to return values. This makes switch expressions very flexible and capable of handling complex logic.
+
+By using switch as an expression, you can write more expressive, readable, and maintainable code.
+
+
+
+
 
 ## Key Differences
 
