@@ -1,4 +1,6 @@
+Sure, here is the updated markdown with a use case for using switch as an expression:
 
+```markdown
 # Java Switch Statement Cheat Sheet
 
 ## Traditional Switch Statement
@@ -67,6 +69,30 @@ switch (switchValue) {
 }
 ```
 
+## Using Switch as an Expression (Java 12+)
+
+### Syntax
+```java
+result = switch (expression) {
+    case value1 -> // Expression;
+    case value2 -> // Expression;
+    // Other cases
+    default -> // Default expression;
+};
+```
+
+### Example
+```java
+int day = 3;
+String dayType = switch (day) {
+    case 1, 2, 3, 4, 5 -> "Weekday";
+    case 6, 7 -> "Weekend";
+    default -> "Invalid day";
+};
+
+System.out.println(dayType); // Outputs: Weekday
+```
+
 ## Key Differences
 
 ### Traditional Switch Statement
@@ -80,10 +106,15 @@ switch (switchValue) {
 - Supports multiple labels per case, separated by commas.
 - More concise and readable.
 
+### Switch as an Expression
+- Allows the use of switch in assignment statements.
+- Each case can return a value, making switch more powerful and expressive.
+- Available from Java 12 onwards.
+
 ## Notes
 - Always use `default` to handle unexpected cases.
 - Enhanced switch statements are available from Java 12 onwards.
 - Use enhanced switch statements for improved readability and reduced errors due to fall-through.
+- **Valid types for switch statements**: `char`, `byte`, `short`, `int`, `String`, and `enum` types.
 ```
 
-This cheat sheet provides a quick reference to the syntax and usage of both traditional and enhanced switch statements in Java, along with examples and key differences.
