@@ -1,6 +1,9 @@
 
 # Java String Operations
 
+- In Java, the String class is immutable, meaning that once a String object is created, it cannot be changed. 
+- However, when you perform operations like substring, concat, or any other method that appears to modify the string, what actually happens is that a new String object is created with the result of the operation
+
 ## Syntax:
 ```java
 String input = "GitHub";
