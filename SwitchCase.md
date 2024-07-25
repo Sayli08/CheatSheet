@@ -1,4 +1,4 @@
-Sure, here is the updated markdown with a use case for using switch as an expression:
+For using switch as an expression:
 
 ```markdown
 # Java Switch Statement Cheat Sheet
