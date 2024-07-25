@@ -98,9 +98,9 @@ System.out.println(dayType); // Outputs: Weekday
 
 ### Switch as an Expression
 
-In Java 12 and later, the switch statement can be used as an expression. 
-This means that the switch can directly return a value, which can then be assigned to a variable or used in other expressions. 
-This makes the switch statement more powerful and concise.
+- In Java 12 and later, the switch statement can be used as an expression. 
+- This means that the switch can directly return a value, which can then be assigned to a variable or used in other expressions. 
+- This makes the switch statement more powerful and concise.
 
 #### Syntax
 ```java
@@ -173,7 +173,8 @@ System.out.println("Days in month: " + daysInMonth); // Outputs: Days in month: 
 - **Block of Code for February**: For February, a block of code checks whether the year is a leap year and uses the `yield` statement to return the appropriate number of days.
 - **Default Case**: The default case throws an exception if an invalid month is provided.
 
-This example demonstrates how switch expressions can include blocks of code, which can use the `yield` statement to return values. This makes switch expressions very flexible and capable of handling complex logic.
+This example demonstrates how switch expressions can include blocks of code, which can use the `yield` statement to return values. 
+This makes switch expressions very flexible and capable of handling complex logic.
 
 By using switch as an expression, you can write more expressive, readable, and maintainable code.
 
