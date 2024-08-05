@@ -210,4 +210,45 @@ public class Main {
     }
 }
 ```
-###Note: All the methods above have a time complexity of O(1) because converting an integer to a string involves a constant amount of work regardless of the integer's value.
+### Note: All the methods above have a time complexity of O(1) because converting an integer to a string involves a constant amount of work regardless of the integer's value.
+
+## Checking Equality of Two Strings:
+1. Use `equals`:
+```java
+String str1 = "GitHub";
+String str2 = "GitHub";
+String str3 = "GitLab";
+boolean isEqual = str1.equals(str2);  // true
+boolean isNotEqual = str1.equals(str3);  // false
+```
+
+**Time Complexity:** O(n) where n is the length of the string
+
+## Reversing a String:
+1. Using `StringBuilder`:
+```java
+String str = "GitHub";
+String reversedStr = new StringBuilder(str).reverse().toString();  // "buHtiG"
+```
+
+**Time Complexity:** O(n) where n is the length of the string
+
+## Example Usage for `equals` and `reverse`:
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Checking Equality
+        String str1 = "GitHub";
+        String str2 = "GitHub";
+        String str3 = "GitLab";
+        System.out.println(str1.equals(str2));  // Output: true
+        System.out.println(str1.equals(str3));  // Output: false
+
+        // Reversing a String
+        String str = "GitHub";
+        String reversedStr = new StringBuilder(str).reverse().toString();
+        System.out.println(reversedStr);  // Output: "buHtiG"
+    }
+}
+```
+
