@@ -1,2 +1,3 @@
-\u2022 : Bullet 
-
+- \u2022 : Bullet 
+- \n : new lines 
+- \t :  tabs
