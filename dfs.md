@@ -1,4 +1,3 @@
-````markdown
 # Java DFS - Quick Reference
 
 ```java
@@ -638,4 +637,4 @@ Uses an explicit stack
 Need shortest unweighted path:
 Use BFS
 ```
-````
+
